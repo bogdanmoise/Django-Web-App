@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="content-section">
+    <h2>Welcome to Laptops for Students!</h2>
+    <hr>
+    <p>Students always face problems when deciding what laptop should they buy. So we created this tech site where users can post their opinions/tips
+        regarding laptop models and brands. Users can just read the articles or register and post their own. You can also check out other recommended retailers and
+        use our web scraping tool to see the best deals right now. Hope you enjoy your stay! :D
+    </p>
+</div>
+{% endblock content%}
+
+{% block sidebar %}
+<div class="content-section">
+            <h3>Useful links</h3>
+            <p class='text-muted'>
+              Check out these useful sites!
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.pcmag.com/picks/the-best-laptops">
+                    Best Laptops for 2021 - by PC Mag</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.techradar.com/news/the-best-laptop-deals">
+                    Budget Laptops - by Tech Radar</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.digitaltrends.com/computing/laptop-buying-guide/">
+                    Laptop Buying Guide - by Digital Trends</a></li>
+                <li class="list-group-item list-group-item-light">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recommended retailers
+                        </a>
+                        <div class="dropdown-menu text-dark" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item text-center text-dark"  href="https://www.cel.ro/laptop-laptopuri/" target="_blank">Cel</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.emag.ro/laptopuri/c" target="_blank">Emag</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.pcgarage.ro/notebook-laptop/" target="_blank">PC Garage</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.amazon.com/Notebooks-Laptop-Computers/b?ie=UTF8&node=565108" target="_blank">Amazon</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://altex.ro/oferte-laptopuri/pag/" target="_blank">Altex</a>
+                        </div>
+                </li>
+              </ul>
+            </p>
+          </div>
+{% endblock sidebar %}

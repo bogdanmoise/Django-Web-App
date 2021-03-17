@@ -1,0 +1,12 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="content-section">
+        <h2>You have logged out</h2>
+        <div class="border-top pt-3">
+            <a class="ml-2" href="{% url 'page-home' %}">Go back to the Home page</a>
+            <br>
+            <br>
+            <a class="ml-2" href="{% url 'login' %}">Log in </a>
+        </div>
+</div>
+{% endblock content%}

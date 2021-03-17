@@ -1,0 +1,58 @@
+{% extends "home/base.html" %}
+{% block content %}
+        <article class="media content-section">
+            <a href="{% url 'author-detailed' object.author.id %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url}}" ></a>
+            <div class="media-body">
+                <div class="article-metadata">
+                    Author :
+                    <a class="mr-2" href="{% url 'post-author-detailed' post.author.id %}">{{ object.author }}</a>
+                </div>
+                <h2 class="article-title">{{ object.title }}</h2>
+                <p class="article-content">{{ object.content }}</p>
+                <small class="text-muted">Date posted : {{ object.date|date:'d F, Y' }}</small>
+            </div>
+        </article>
+{% endblock content%}
+
+{% block sidebar %}
+{% if object.author == user%}
+        <div class="content-section">
+            <h3 class="mb-4">User operations</h3>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'post-update' object.id %}">Edit Post</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'post-delete' object.id %}">Delete Post</a></li>
+              </ul>
+          </div>
+{% else %}
+        <div class="content-section">
+            <h3>Useful links</h3>
+            <p class='text-muted'>
+              Check out these useful sites!
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.pcmag.com/picks/the-best-laptops">
+                    Best Laptops for 2021 - by PC Mag</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.techradar.com/news/the-best-laptop-deals">
+                    Budget Laptops - by Tech Radar</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.digitaltrends.com/computing/laptop-buying-guide/">
+                    Laptop Buying Guide - by Digital Trends</a></li>
+                <li class="list-group-item list-group-item-light">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recommended retailers
+                        </a>
+                        <div class="dropdown-menu text-dark" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item text-center text-dark"  href="https://www.cel.ro/laptop-laptopuri/" target="_blank">Cel</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.emag.ro/laptopuri/c" target="_blank">Emag</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.pcgarage.ro/notebook-laptop/" target="_blank">PC Garage</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.amazon.com/Notebooks-Laptop-Computers/b?ie=UTF8&node=565108" target="_blank">Amazon</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://altex.ro/oferte-laptopuri/pag/" target="_blank">Altex</a>
+                        </div>
+                </li>
+              </ul>
+            </p>
+          </div>
+{% endif %}
+{% endblock sidebar %}

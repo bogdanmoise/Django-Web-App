@@ -1,0 +1,50 @@
+{% extends "home/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+            <a href="{% url 'author-detailed' post.author.id %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></a>
+            <div class="media-body">
+                <div class="article-metadata">
+                    Author :
+                    <a class="mr-2" href="{% url 'author-detailed' post.author.id %}">{{ post.author }}</a>
+                </div>
+                <h2><a class="article-title" href="{% url 'post-detailed' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+                <small class="text-muted">Date posted : {{ post.date|date:'d F, Y' }}</small>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content%}
+
+{% block sidebar %}
+<div class="content-section position-fixed">
+            <h3>Useful links</h3>
+            <p class='text-muted'>
+              Check out these useful sites!
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.pcmag.com/picks/the-best-laptops" target="_blank">
+                    Best Laptops for 2021 - by PC Mag</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.techradar.com/news/the-best-laptop-deals" target="_blank">
+                    Budget Laptops - by Tech Radar</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="https://www.digitaltrends.com/computing/laptop-buying-guide/" target="_blank">
+                    Laptop Buying Guide - by Digital Trends</a></li>
+                <li class="list-group-item list-group-item-light">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recommended retailers
+                        </a>
+                        <div class="dropdown-menu text-dark" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item text-center text-dark"  href="https://www.cel.ro/laptop-laptopuri/" target="_blank">Cel</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.emag.ro/laptopuri/c" target="_blank">Emag</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.pcgarage.ro/notebook-laptop/" target="_blank">PC Garage</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://www.amazon.com/Notebooks-Laptop-Computers/b?ie=UTF8&node=565108" target="_blank">Amazon</a>
+                          <hr>
+                          <a class="dropdown-item text-center text-dark" href="https://altex.ro/oferte-laptopuri/pag/" target="_blank">Altex</a>
+                        </div>
+                </li>
+              </ul>
+            </p>
+          </div>
+{% endblock sidebar %}
